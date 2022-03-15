@@ -1,0 +1,20 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+      
+      <!-- Forma general de un perfil en el archivo settings de Maven --> 
+        <profile>
+			<id>test</id>
+			<activation>...</activation>
+			<repositories>...</repositories>
+			<pluginRepositories>...</pluginRepositories>
+			<properties>…</properties>
+		</profile>
+
+		<!-- Forma de activar un perfil desde el archivo setting.xml de Maven --> 
+		<activeProfiles>
+			<activeProfile>dev</activeProfile>
+		</activeProfiles>
+
+ 
+      
+</settings>

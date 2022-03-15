@@ -1,0 +1,60 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+      
+      <localRepository>${user.home}/.m2/repository</localRepository>
+
+      <offline>false</offline>
+
+      <proxies>
+		    <proxy>
+		      <id>myproxy</id>
+		      <active>true</active>
+		      <protocol>http</protocol>
+		      <host>proxy.somewhere.com</host>
+		      <port>8080</port>
+		      <username>proxyuser</username>
+		      <password>somepassword</password>
+		      <nonProxyHosts>*.google.com|ibiblio.org</nonProxyHosts>
+		    </proxy>
+		</proxies>
+
+		<mirror>
+			<id>nexus</id>
+			<name>My Company Mirror</name>
+			<url>http://nexus.mycompany.com/pub/maven2</url>
+			<mirrorOf>central</mirrorOf>
+		</mirror>
+
+		<repositories>
+			<repository>
+				<id>codehausSnapshots</id>
+				<name>Codehaus Snapshots</name>
+				<releases>
+					<enabled>false</enabled>
+					<updatePolicy>always</updatePolicy>
+					<checksumPolicy>warn</checksumPolicy>
+				</releases>
+				<snapshots>
+					<enabled>true</enabled>
+					<updatePolicy>never</updatePolicy>
+					<checksumPolicy>fail</checksumPolicy>
+				</snapshots>
+				<url>http://snapshots.maven.codehaus.org/maven2</url>
+				<layout>default</layout>
+			</repository>
+		</repositories>
+
+		<servers>
+			<server>
+				<id>servidor</id>
+				<username>mi-usuario</username>
+				<password>mi-contraseña</password>
+				<privateKey>${user.home}/.ssh/id_dsa</privateKey>
+				<passphrase>alguna-frase-de-contraseña</passphrase>
+				<filePermissions>111</filePermissions>
+				<directoryPermissions>222</directoryPermissions>
+				<configuration></configuration>
+			</server>
+		</servers>
+
+</settings>
