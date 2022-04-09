@@ -53,6 +53,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- Dependencia de para el plugin sonar-maven-plugin  -->
+    <dependency>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>3.8.0.2131</version>
+      </dependency>
+
   </dependencies>
 
   <build>
@@ -100,6 +107,37 @@
           </execution>
         </executions>
       </plugin>
+
+      <!-- Plugin necesario para ver el porcentaje de covertura en SonarQube -->  
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.8.0.2131</version>
+      </plugin>
+
+      <!-- Plugin necesario para generar el reporte de cobertura que luego usará SonarQube -->
+      <plugin>
+         <groupId>org.jacoco</groupId>
+         <artifactId>jacoco-maven-plugin</artifactId>
+         <version>0.8.6</version>
+         <executions>
+            <execution>
+                <id>prepare-agent</id>
+                <goals>
+                   <goal>prepare-agent</goal>
+                </goals>
+                <phase>test-compile</phase>
+            </execution>
+            <execution>
+                <id>report</id>
+                <goals>
+                   <goal>report</goal>
+                </goals>
+                <phase>test</phase>
+            </execution>
+          </executions>
+      </plugin>
+
 
     </plugins>
 

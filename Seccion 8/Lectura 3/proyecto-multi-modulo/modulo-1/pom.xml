@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.udemy.maven</groupId>
+    <artifactId>proyecto-multi-modulo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  
+  <groupId>com.udemy.maven</groupId>
+  <artifactId>modulo-1</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  
+  <name>modulo-1</name>
+  
+  <url>http://maven.apache.org</url>
+  
+  <!-- Especificamos la dependencia necesaria y tomará la versión y el scope del pom parent -->
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+  </dependencies>
+
+  <!-- Especificamos solo el groupId y el artifactId del plugin que deseamos emplear(JaCoCo en este caso), el resto de las instrucciones serán heredadas del pom parent -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

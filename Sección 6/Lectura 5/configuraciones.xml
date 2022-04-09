@@ -1,0 +1,20 @@
+<!-- Se deben agregar las siguiente líneas al POM del proyecto para el deploy del sitio de documentación -->
+<distributionManagement>
+	<site>
+		<id>mi-id</id>
+		<url>scp://tu.url.com/proyecto/</url>
+	</site>
+</distributionManagement>
+
+
+<!-- Se deben agregar las siguiente líneas al archivo settings.xml para el deploy del sitio de documentación -->
+<servers>
+	<server>
+		<id>mi-id</id>
+		<username>usuario</username>
+		<password>contraseña</password>
+		<filePermissions>664</filePermissions>
+		<directoryPermissions>775</directoryPermissions>
+	</server>
+</servers>
+

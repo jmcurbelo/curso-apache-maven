@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.udemy.maven</groupId>
+  <artifactId>mi-proyecto</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <!-- Nombre del proyecto -->
+  <name>mi-proyecto</name>
+  
+  <!-- URL del proyecto -->
+  <url>http://www.udemy.com</url>
+
+  <!-- Lista de desarrolladores que participaron/participan en el proyecto -->
+  <developers>
+    <developer>
+      <id>jmmc</id>
+      <name>Jose Moya</name>
+      <email>josemoya@ejemplo.com</email>
+      <url>http://www.ejemplo.com/jmmc</url>
+      <organization>UDEMY</organization>
+      <organizationUrl>http://www.udemy.com</organizationUrl>
+      <roles>
+        <role>Data Engineer</role>
+        <role>developer</role>
+      </roles>
+      <timezone>America/Mexico City</timezone>
+    </developer>
+  </developers>
+
+  <!-- Lista de contribuidores del proyecto -->
+  <contributors>
+    <contributor>
+      <name>Idalme</name>
+      <email>idalme@gmail.com</email>
+      <url>http://idalme.com</url>
+      <organization>Udemy</organization>
+      <organizationUrl>http://udemy.com</organizationUrl>
+      <roles>
+        <role>tester</role>
+      </roles>
+      <timezone>America/Mexico City</timezone>
+    </contributor>
+  </contributors>
+
+  <!-- Licencia/licencias del proyecto -->
+  <licenses>
+    <license>
+      <name>Mi licencia</name>
+      <url>https://www.mi-licencia.com/licencia.txt</url>
+      <distribution>repo</distribution>
+      <comments>Una descripción sobre mi licencia</comments>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+  
+      <plugins>
+
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+
+      </plugins>
+
+  </build>
+
+  <!-- Esta sección es empleada para generar la documentación de Javadoc en el sitio web de docuemntación del proyecto -->
+  <reporting>
+
+    <plugins>
+      
+      <!-- Esta es la sección empleada para generar el reporte personalizado que deseamos para nuestro proyecto -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.2.2</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <!-- Con la etiqueta report indicamos los reportes que deseamos sean incluidos en el sitio de documentación -->
+              <report>index</report>
+              <report>dependencies</report>
+              <report>team</report>
+              <report>licenses</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+
+    </plugins>
+    
+  </reporting>
+
+</project>

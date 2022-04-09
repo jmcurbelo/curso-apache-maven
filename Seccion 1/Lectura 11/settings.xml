@@ -6,10 +6,10 @@ xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.
 	      <id>myproxy</id>
 	      <active>true</active>
 	      <protocol>http</protocol>
-	      <host>proxy.somewhere.com</host>
+	      <host>mi.proxy.com</host>
 	      <port>8080</port>
-	      <username>proxyuser</username>
-	      <password>somepassword</password>
+	      <username>usurio-proxy</username>
+	      <password>contraseña</password>
 	      <nonProxyHosts>*.google.com|ibiblio.org</nonProxyHosts>
 	    </proxy>
 	</proxies>

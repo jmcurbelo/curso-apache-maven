@@ -1,27 +1,30 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
       
+      <!-- Los siguientes son ejemplos de configuraciones que se pueden agregar al archivo settings.xml -->
+      <!-- Usted debe adaptarlos de acuerdo a sus necesidades y requerimientos -->
+      
       <localRepository>${user.home}/.m2/repository</localRepository>
 
       <offline>false</offline>
 
       <proxies>
 		    <proxy>
-		      <id>myproxy</id>
+		      <id>mi-proxy</id>
 		      <active>true</active>
 		      <protocol>http</protocol>
-		      <host>proxy.somewhere.com</host>
+		      <host>mi.proxy.com</host>
 		      <port>8080</port>
-		      <username>proxyuser</username>
-		      <password>somepassword</password>
+		      <username>usuario-proxy</username>
+		      <password>contraseña</password>
 		      <nonProxyHosts>*.google.com|ibiblio.org</nonProxyHosts>
 		    </proxy>
 		</proxies>
 
 		<mirror>
 			<id>nexus</id>
-			<name>My Company Mirror</name>
-			<url>http://nexus.mycompany.com/pub/maven2</url>
+			<name>mirror-mi-compañia</name>
+			<url>http://nexus.mi-compañía.com/pub/maven2</url>
 			<mirrorOf>central</mirrorOf>
 		</mirror>
 

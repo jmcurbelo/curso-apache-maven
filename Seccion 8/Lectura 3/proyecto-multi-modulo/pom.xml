@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+      
+  <modelVersion>4.0.0</modelVersion>
+      
+  <groupId>com.udemy.maven</groupId>
+  
+  <artifactId>proyecto-multi-modulo</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+      
+  <name>proyecto-multi-modulo</name>
+      
+  <url>http://maven.apache.org</url>
+      
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+      
+  <!-- Emplear dependencyManagement para manejar las dependencias del proyecto -->
+  <dependencyManagement>
+
+    <dependencies>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+        <scope>test</scope>
+      </dependency>
+
+      <!-- Se agrega la dependencia que deseamos emplear, en este caso JaCoCo -->
+      <dependency>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.7</version>
+      </dependency>
+
+      <!-- Descomentar la siguiente sección si se desea realizar el ejemplo de ver cómo funciona la herencia de un plugin si este interviene en el ciclo de vida de construcción del proyecto-->
+      <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+        <type>maven-plugin</type>
+      </dependency>
+
+    </dependencies>
+
+  </dependencyManagement>
+  
+  <!-- Se emplea pluginManagement dentro del build para gestionar los plugin de los módulos hijos --> 
+  <build>
+    <pluginManagement>
+
+      <plugins>
+
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.7</version>
+          <executions>
+            <execution>
+              <id>default-prepare-agent</id>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>default-report</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>report</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- Descomentar la siguiente sección si se desea realizar el ejemplo de ver cómo funciona la herencia de un plugin si este interviene en el ciclo de vida de construcción del proyecto-->
+        <!-- Agregar la instrucción  <inherited>false</inherited>  si se desea omitir la herencia de este plugin en los proyectos hijos -->
+        <!--
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.10.1</version>
+        </plugin> 
+         -->
+
+      </plugins>
+
+    </pluginManagement>
+</build>
+    
+  
+  <modules>
+    <module>modulo-1</module>
+    <module>modulo-2</module> 
+  </modules>
+  
+</project>
