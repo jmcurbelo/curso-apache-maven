@@ -10,10 +10,7 @@
   <version>1.0-SNAPSHOT</version>
       
   <name>proyecto-multi-modulo</name>
-      
-  <url>http://maven.apache.org</url>
-      
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -40,13 +37,14 @@
       </dependency>
 
       <!-- Descomentar la siguiente sección si se desea realizar el ejemplo de ver cómo funciona la herencia de un plugin si este interviene en el ciclo de vida de construcción del proyecto-->
+      <!--
       <dependency>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.10.1</version>
         <type>maven-plugin</type>
       </dependency>
-
+      -->
     </dependencies>
 
   </dependencyManagement>

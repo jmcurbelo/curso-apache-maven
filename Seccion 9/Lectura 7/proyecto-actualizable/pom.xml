@@ -17,12 +17,23 @@
   </properties>
 
   <dependencies>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- Dependnecia necesaria para emplear el plugin maven-enforcer-plugin -->
+    <!--
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-enforcer-plugin</artifactId>
+      <version>3.0.0</version>
+      <type>maven-plugin</type>
+    </dependency>
+    -->
   </dependencies>
 
   <build>
@@ -33,7 +44,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.8.4</version>
+        <version>3.0.0</version>
         <executions>
           <execution>
             <id>enforce-maven</id>
@@ -43,7 +54,7 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>3.0</version>
+                  <version>3.8.4</version>
                 </requireMavenVersion>
               </rules>    
             </configuration>
@@ -51,7 +62,8 @@
         </executions>
       </plugin>
     </plugins>
-    -->
+   -->
 
   </build>
+
 </project>
