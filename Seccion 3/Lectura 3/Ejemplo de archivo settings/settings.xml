@@ -3,7 +3,7 @@
       
       <!-- Forma general de un perfil en el archivo settings.xml de Maven --> 
         <profile>
-			<id>test</id>
+			<id>...</id>
 			<activation>...</activation>
 			<repositories>...</repositories>
 			<pluginRepositories>...</pluginRepositories>
@@ -12,7 +12,7 @@
 
 		<!-- Forma de activar un perfil desde el archivo setting.xml de Maven --> 
 		<activeProfiles>
-			<activeProfile>dev</activeProfile>
+			<activeProfile>...</activeProfile>
 		</activeProfiles>
 
  

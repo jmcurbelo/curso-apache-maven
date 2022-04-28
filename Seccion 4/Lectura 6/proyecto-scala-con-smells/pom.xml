@@ -53,7 +53,7 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- Dependencia de para el plugin sonar-maven-plugin  -->
+    <!-- Dependencia para el plugin sonar-maven-plugin  -->
     <dependency>
           <groupId>org.sonarsource.scanner.maven</groupId>
           <artifactId>sonar-maven-plugin</artifactId>

@@ -63,7 +63,7 @@
 
   </build>
 
-  <!-- Esta sección es empleada para generar la documentación de Javadoc en el sitio web de docuemntación del proyecto -->
+  <!-- Esta sección es empleada para generar la documentación de Javadoc en el sitio web de documentación del proyecto -->
   <reporting>
 
     <plugins>
